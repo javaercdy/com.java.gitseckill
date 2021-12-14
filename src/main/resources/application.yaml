@@ -1,0 +1,27 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    password: 145364
+    url: jdbc:mysql://localhost:3306/seckill?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+
+  redis:
+    host: 192.168.200.128
+    port: 6379
+
+  rabbitmq:
+    virtual-host: /
+    host: 192.168.200.128
+    username: admin
+    password: 123
+    port: 5672
+    listener:
+      simple:
+        acknowledge-mode: manual #手动应答
+#        default-requeue-rejected: false  false 为 消息出错不自动入列
+
+mybatis-plus:
+  type-aliases-package: com.java.gitseckill.Bean
+  mapper-locations: classpath*:/mapper/**.xml
